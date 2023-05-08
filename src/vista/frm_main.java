@@ -1,6 +1,6 @@
 package vista;
 
-import java.awt.Dimension;
+//import java.awt.Dimension;
 
 public class frm_main extends javax.swing.JFrame {
 
@@ -24,27 +24,26 @@ public class frm_main extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnPerfil = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombres = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtApellidos = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtCiudad = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtDepartamento = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,8 +63,8 @@ public class frm_main extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setText("Proveedores");
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton5.setText("Perfil");
+        btnPerfil.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnPerfil.setText("Perfil");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,7 +82,7 @@ public class frm_main extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -98,7 +97,7 @@ public class frm_main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
         );
 
@@ -109,8 +108,8 @@ public class frm_main extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setEnabled(false);
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 112, 233, 28));
+        txtNombres.setEnabled(false);
+        jPanel3.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 112, 233, 28));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -122,60 +121,59 @@ public class frm_main extends javax.swing.JFrame {
         jLabel2.setText("Apellidos:");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 146, 106, 28));
 
-        jTextField2.setEnabled(false);
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 146, 233, 28));
+        txtApellidos.setEnabled(false);
+        jPanel3.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 146, 233, 28));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Id:");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 78, 106, 28));
 
-        jTextField3.setEnabled(false);
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 78, 233, 28));
+        txtId.setEnabled(false);
+        jPanel3.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 78, 233, 28));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Dirección:");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 180, 106, 28));
 
-        jTextField4.setEnabled(false);
-        jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 180, 233, 28));
+        txtDireccion.setEnabled(false);
+        jPanel3.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 180, 233, 28));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Ciudad:");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 214, 106, 28));
 
-        jTextField5.setEnabled(false);
-        jPanel3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 214, 233, 28));
+        txtCiudad.setEnabled(false);
+        jPanel3.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 214, 233, 28));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Departamento:");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 248, 110, 28));
 
-        jTextField6.setEnabled(false);
-        jPanel3.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 248, 233, 28));
+        txtDepartamento.setEnabled(false);
+        jPanel3.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 248, 233, 28));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Télefono:");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 282, 110, 28));
 
-        jTextField7.setEnabled(false);
-        jPanel3.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 282, 233, 28));
+        txtTelefono.setEnabled(false);
+        jPanel3.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 282, 233, 28));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Correo:");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 316, 106, 28));
 
-        jTextField8.setEnabled(false);
-        jPanel3.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 316, 233, 28));
+        txtCorreo.setEnabled(false);
+        jPanel3.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 316, 233, 28));
 
         jButton6.setText("Editar");
-        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 80, 30));
-        jPanel3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 90, 30));
+        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 80, 30));
 
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 140, 140));
@@ -238,13 +236,12 @@ public class frm_main extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnPerfil;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -257,13 +254,13 @@ public class frm_main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    public javax.swing.JTextField txtApellidos;
+    public javax.swing.JTextField txtCiudad;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtDepartamento;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtId;
+    public javax.swing.JTextField txtNombres;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
