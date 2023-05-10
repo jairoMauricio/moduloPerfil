@@ -11,13 +11,12 @@ import conexion.DatabaseConnection;
 public class CtrLogin implements ActionListener{
 
     frm_main login;
-    MdlUsuario mdllogin;
     Validaciones validar = new Validaciones();
     DatabaseConnection consulta = new DatabaseConnection();
 
     public CtrLogin(frm_main login, MdlUsuario mdllogin) {
             this.login = login;
-            this.mdllogin = mdllogin;
+            this.consulta.mdlusuario = mdllogin;
             this.login.btnPerfil.addActionListener(this);
 //            listener();
             iniciar();
@@ -29,108 +28,43 @@ public class CtrLogin implements ActionListener{
         Object evt = e.getSource();
         
         if (evt.equals(login.btnPerfil)) {
-            login.txtId.setText("hola");
+            consulta();
         }
-//            String nombre = login.txtNombre.getText();
-//            String correo = login.txtCorreo.getText();
-//            char[] contrasenia = login.pwdContrasenia.getPassword();
-//            char[] confirmacion = login.pwdValidacion.getPassword();
-//            String rol = (String) login.cmbRol.getSelectedItem();
-//            if(validar.validarVacio(nombre) == true) {
-//                vistaUsuario.lblError.setText("Error! Debes colocar un nombre.");
-//            }
-//            else if(validar.validarVacio(correo) == true){
-//                vistaUsuario.lblError.setText("Error! Necesitas un correo.");
-//            }
-//            else if(validar.validarArroba(correo) == true){
-//                vistaUsuario.lblError.setText("Error! El correo debe contener un arroba(@).");
-//            }
-//            else if(validar.validarVacio(String.valueOf(contrasenia))){
-//                vistaUsuario.lblError.setText("Error! Se requiere una contraseña.");
-//            }
-//            else if(validar.cantidadCaracteres(String.valueOf(contrasenia))){
-//                vistaUsuario.lblError.setText("Error! Tu contraseña debe ser de mínimo 8 carácteres.");
-//            }
-//            else if(validar.confirmacion(String.valueOf(contrasenia), String.valueOf(confirmacion)) == false){
-//                vistaUsuario.lblError.setText("Error! La contraseña y la confirmación no son las mismas.");
-//            }
-//            else if (validar.validarVacio(rol)){
-//                vistaUsuario.lblError.setText("Error! Debes elegir un rol.");
-//            }
-//            else {
-//                mdllogin.setNombre(nombre);
-//                mdllogin.setCorreo(correo);
-//                mdllogin.setContrasenia(contrasenia);
-//                mdllogin.setRol(rol);
-//                if (consulta.insertarUsuario(mdllogin)) {
-//                    vistaUsuario.lblError.setText("Se ha registrado correctamente!");
-//                    llenarTabla();
-//                    limpiar();
-//                } else {
-//                    vistaUsuario.lblError.setText("Ha habido un error!");
-//                }
-//            }
-//        } else if (evt.equals(vistaUsuario.btnLimpiar)) {
-//            limpiar();
-//        }
-        
     }
     
     public void consulta(){
-        consulta.consultarUsuarios();
+        String sql = "SELECT id, nombres, apellidos, direccion, ciudad, departamento, telefono, correo, contrasenia, fecha_creacion, fecha_actualizacion\n"
+                + "FROM usuarios";
+        consulta.consult(sql);
+        login.txtId.setText(String.valueOf(consulta.mdlusuario.getId()));
+        login.txtNombres.setText(consulta.mdlusuario.getNombres());
+        login.txtApellidos.setText(consulta.mdlusuario.getApellidos());
+        login.txtDireccion.setText(consulta.mdlusuario.getDireccion());
+        login.txtCiudad.setText(consulta.mdlusuario.getCiudad());
+        login.txtDepartamento.setText(consulta.mdlusuario.getDepartamento());
+        login.txtTelefono.setText(consulta.mdlusuario.getTelefono());
+        login.txtCorreo.setText(consulta.mdlusuario.getCorreo());
+        login.txtFechaCreacion.setText(consulta.mdlusuario.getFecha_creacion());
+        login.txtFechaActualizacion.setText(consulta.mdlusuario.getFecha_actualizacion());
+        habilitar();
     }
     
-//    private void listener() {
-//        login.btnEnviar.addActionListener(new ActionListener() {
-//
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//                String nombre = login.txtNombre.getText();
-//                String correo = login.txtCorreo.getText();
-//                char[] contrasenia = login.pwdContrasenia.getPassword();
-//                char[]  confirmacion = login.pwdConfirmacion.getPassword();
-//
-//                if(validar.validarVacio(nombre) == true) {
-//                    login.lblError.setText("Error! Debes colocar un nombre.");
-//                } 
-//                else if(validar.validarVacio(correo) == true){
-//                    login.lblError.setText("Error! Necesitas un correo.");
-//                }
-//                else if(validar.validarArroba(correo) == true){
-//                    login.lblError.setText("Error! El correo debe contener un arroba(@).");
-//                }
-//                else if(validar.validarVacio(String.valueOf(contrasenia))){
-//                    login.lblError.setText("Error! Se requiere una contraseña.");
-//                } 
-//                else if(validar.cantidadCaracteres(String.valueOf(contrasenia))){
-//                    login.lblError.setText("Error! Tu contraseña debe ser de mínimo 8 carácteres.");
-//                }
-//                else if(validar.confirmacion(String.valueOf(contrasenia), String.valueOf(confirmacion)) == false){
-//                    login.lblError.setText("Error! La contraseña y la confirmación no son las mismas.");
-//                }
-//                else {
-//                    mdllogin.setNombre(nombre);
-//                    mdllogin.setCorreo(correo);
-//                    mdllogin.setContrasenia(contrasenia);
-//                    boolean logueado = consulta.ingreso(mdllogin);
-//                    if (logueado) {
-//                        new CtrMenu();
-//                        login.dispose();
-//                    } else {
-//                        login.lblError.setVisible(true);
-//                        login.lblError.setText("Datos Incorrectos");
-//                    }
-//                }
-//            }
-//        });
-//    }
+    public void habilitar(){
+        login.txtId.setEnabled(false);
+        login.txtNombres.setEnabled(false);
+        login.txtApellidos.setEnabled(false);
+        login.txtDireccion.setEnabled(false);
+        login.txtCiudad.setEnabled(false);
+        login.txtDepartamento.setEnabled(false);
+        login.txtTelefono.setEnabled(false);
+        login.txtCorreo.setEnabled(false);
+        login.txtFechaCreacion.setEnabled(false);
+        login.txtFechaActualizacion.setEnabled(false);
+    }
     
     public void iniciar(){
         login.setTitle(null);
         login.setLocationRelativeTo(null);
         login.setVisible(true);
     }
-    
-    
 }

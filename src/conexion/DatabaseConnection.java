@@ -5,10 +5,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import modelo.MdlUsuario;
 
 public class DatabaseConnection implements Configuration {
 
     private Connection connection = null;
+    public MdlUsuario mdlusuario = new MdlUsuario();
 
     public Connection getConnection() {
         try {
@@ -58,11 +60,23 @@ public class DatabaseConnection implements Configuration {
             Statement statement;
             statement = getConnection().createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
             result = statement.executeQuery(sql);
+            if(result.next()){
+                mdlusuario.setId(result.getInt("id"));
+                mdlusuario.setNombres(result.getString("nombres"));
+                mdlusuario.setApellidos(result.getString("apellidos"));
+                mdlusuario.setDireccion(result.getString("direccion"));
+                mdlusuario.setCiudad(result.getString("ciudad"));
+                mdlusuario.setDepartamento(result.getString("departamento"));
+                mdlusuario.setTelefono(result.getString("telefono"));
+                mdlusuario.setCorreo(result.getString("correo"));
+                mdlusuario.setFecha_creacion(result.getString("fecha_creacion"));
+                mdlusuario.setFecha_actualizacion(result.getString("fecha_actualizacion"));
+                
+            }
         } catch (SQLException exception) {
             System.out.println("Query failed: " + exception);
             exception.printStackTrace();
         }
         return result;
     }
-
 }
