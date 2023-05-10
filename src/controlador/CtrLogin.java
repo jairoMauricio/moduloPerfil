@@ -18,6 +18,7 @@ public class CtrLogin implements ActionListener{
             this.login = login;
             this.consulta.mdlusuario = mdllogin;
             this.login.btnPerfil.addActionListener(this);
+            this.login.btnEditar.addActionListener(this);
 //            listener();
             iniciar();
             consulta();
@@ -29,6 +30,17 @@ public class CtrLogin implements ActionListener{
         
         if (evt.equals(login.btnPerfil)) {
             consulta();
+        } else if (evt.equals(login.btnEditar)){
+            habilitar();
+            MdlUsuario mdlusuario2 = new MdlUsuario();
+            mdlusuario2.setNombres(login.txtNombres.getText());
+            mdlusuario2.setApellidos(login.txtApellidos.getText());
+            mdlusuario2.setDireccion(login.txtDireccion.getText());
+            mdlusuario2.setCiudad(login.txtCiudad.getText());
+            mdlusuario2.setDepartamento(login.txtDepartamento.getText());
+            mdlusuario2.setTelefono(login.txtTelefono.getText());
+            mdlusuario2.setCorreo(login.txtCorreo.getText());
+            String sql = "";
         }
     }
     
@@ -46,10 +58,10 @@ public class CtrLogin implements ActionListener{
         login.txtCorreo.setText(consulta.mdlusuario.getCorreo());
         login.txtFechaCreacion.setText(consulta.mdlusuario.getFecha_creacion());
         login.txtFechaActualizacion.setText(consulta.mdlusuario.getFecha_actualizacion());
-        habilitar();
+        deshabilitar();
     }
     
-    public void habilitar(){
+    public void deshabilitar(){
         login.txtId.setEnabled(false);
         login.txtNombres.setEnabled(false);
         login.txtApellidos.setEnabled(false);
@@ -58,6 +70,19 @@ public class CtrLogin implements ActionListener{
         login.txtDepartamento.setEnabled(false);
         login.txtTelefono.setEnabled(false);
         login.txtCorreo.setEnabled(false);
+        login.txtFechaCreacion.setEnabled(false);
+        login.txtFechaActualizacion.setEnabled(false);
+    }
+        
+    public void habilitar(){
+        login.txtId.setEnabled(false);
+        login.txtNombres.setEnabled(true);
+        login.txtApellidos.setEnabled(true);
+        login.txtDireccion.setEnabled(true);
+        login.txtCiudad.setEnabled(true);
+        login.txtDepartamento.setEnabled(true);
+        login.txtTelefono.setEnabled(true);
+        login.txtCorreo.setEnabled(true);
         login.txtFechaCreacion.setEnabled(false);
         login.txtFechaActualizacion.setEnabled(false);
     }
