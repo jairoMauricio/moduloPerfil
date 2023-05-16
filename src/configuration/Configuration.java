@@ -1,4 +1,4 @@
-package conexion;
+package configuration;
 
 public interface Configuration {
 

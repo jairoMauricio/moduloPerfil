@@ -1,12 +1,12 @@
-package controlador;
+package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import helpers.Validaciones;
-import modelo.MdlUsuario;
-import vista.frm_main;
-import conexion.DatabaseConnection;
+import utilities.Validaciones;
+import models.MdlUsuario;
+import views.frm_main;
+import configuration.DatabaseConnection;
 //import javax.swing.JPanel;
 
 public class CtrLogin implements ActionListener

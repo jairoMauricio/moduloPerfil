@@ -1,6 +1,6 @@
-package helpers;
+package utilities;
 
-import modelo.MdlUsuario;
+import models.MdlUsuario;
 
 public class Session {
     

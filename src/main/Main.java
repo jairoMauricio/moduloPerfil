@@ -1,8 +1,8 @@
-package principal;
+package main;
 
-import controlador.CtrLogin;
-import modelo.MdlUsuario;
-import vista.frm_main;
+import controllers.CtrLogin;
+import models.MdlUsuario;
+import views.frm_main;
 
 public class Main {
 
