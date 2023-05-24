@@ -1,14 +1,14 @@
 package main;
 
-import controllers.CtrLogin;
+import controllers.CtrMain;
 import models.MdlUsuario;
-import views.frm_main;
+import views.frmMain;
 
 public class Main {
 
     public static void main(String[] args) {
         MdlUsuario mdllogin = new MdlUsuario();
-        frm_main vista = new frm_main();
-        CtrLogin controlador = new CtrLogin(vista, mdllogin);
+        frmMain vista = new frmMain();
+        CtrMain controlador = new CtrMain(vista, mdllogin);
     }
 }

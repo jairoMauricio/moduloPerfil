@@ -1,5 +1,6 @@
 package configuration;
 
+//import models.MdlEstatico;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ public class DatabaseConnection implements Configuration {
 
     private Connection connection = null;
     public MdlUsuario mdlusuario = new MdlUsuario();
+//    MdlEstatico UsuarioEstatico = new MdlEstatico();
 
     public Connection getConnection() {
         try {
